@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:layout_margin="@dimen/card_margin"
+        android:elevation="3dp"
+        card_view:cardCornerRadius="@dimen/card_task_radius">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/thumbnail"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/task_cover_height"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:clickable="true"
+                android:onClick="TaskDetails"
+                android:scaleType="fitXY"
+                android:contentDescription="TODO" />
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/thumbnail"
+                android:paddingLeft="@dimen/task_title_padding"
+                android:paddingTop="@dimen/task_title_padding"
+                android:paddingRight="@dimen/task_title_padding"
+                android:textColor="@color/task_title"
+                android:textSize="@dimen/task_title" />
+
+            <TextView
+                android:id="@+id/timestamp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/title"
+                android:paddingLeft="@dimen/task_title_padding"
+                android:paddingRight="@dimen/task_title_padding"
+                android:paddingBottom="@dimen/tasks_count_padding_bottom"
+                android:textSize="@dimen/tasks_count" />
+
+            <ImageView
+                android:id="@+id/overflow"
+                android:layout_width="@dimen/ic_task_overflow_width"
+                android:layout_height="@dimen/ic_task_overflow_height"
+                android:layout_below="@id/thumbnail"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="@dimen/ic_task_overflow_margin_top"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_dots" />
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+</LinearLayout>
